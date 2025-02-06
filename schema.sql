@@ -14,14 +14,14 @@ price DECIMAL(10, 2)CHECK (price > 0));
 --ORDERS TABLE
 CREATE TABLE orders(
 order_id INT PRIMARY KEY, 
-customer_id INTEGER REFERENCES customers(customer_id),
+customer_id INTEGER REFERENCES customers(customer_id) ON DELETE CASCADE,
 order_date DATE DEFAULT CURRENT_DATE);
 
 --ORDER_ITEMS TABLE
 CREATE TABLE order_items(
 order_item_id SERIAL PRIMARY KEY, 
-order_id INT REFERENCES orders (order_id), 
-product_id INT REFERENCES products(product_id),
+order_id INT REFERENCES orders (order_id) ON DELETE CASCADE, 
+product_id INT REFERENCES products(product_id) ON DELETE CASCADE,
 quantity INT CHECK (quantity >= 1));
 
 --SCHEMA OF EACH TABLE
