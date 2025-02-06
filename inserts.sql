@@ -7,7 +7,7 @@ VALUES
   ('Jane Smith', 'jane@gmail.com'),
   ('Manoj Kumar', 'manoj@gmail.com');
 
-SELECT* FROM customers;
+SELECT * FROM customers;
 
 --PRODUCTS INSERTION
 INSERT INTO products (product_name, price) 
