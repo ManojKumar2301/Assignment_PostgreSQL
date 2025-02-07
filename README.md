@@ -10,4 +10,4 @@ This project consists of an SQL database for an e-commerce system, including cus
 # Links of Sql Fiddle:
 #### Schema:  **[schema fiddle link ](https://sqlfiddle.com/postgresql/online-compiler?id=b0d9574f-738e-44b9-83f9-eda4466a4389)**  
 #### Inserts:  **[inserts fiddle link ](https://sqlfiddle.com/postgresql/online-compiler?id=dd413dc5-c5de-4ced-b0c5-4ad09f19cd61)** 
-#### Queries:  **[queries fiddle link ](https://sqlfiddle.com/postgresql/online-compiler?id=dbc8db54-17a5-45d2-8146-03b2885742d6)**
+#### Queries:  **[queries fiddle link ]( https://sqlfiddle.com/postgresql/online-compiler?id=b7c23865-cc92-4e69-87e8-728a186d271a)**
