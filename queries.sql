@@ -13,7 +13,10 @@ SELECT SUM(order_items.quantity * products.price) as total_revenue FROM order_it
 SELECT customers.name, orders.order_date FROM customers INNER JOIN orders on customers.customer_id = orders.customer_id;
 
 --List products that have never been ordered.
-SELECT DISTINCT product_name from products INNER JOIN order_items on products.product_id=order_items.product_id;
+SELECT products.product_name
+FROM Products
+LEFT JOIN Order_Items order_items ON products.product_id = order_items.product_id
+WHERE order_items.product_id IS NULL;
 
 --Find the top-spending customer (total spent across all orders).
 SELECT customers.name, SUM(order_items.quantity * products.price) AS total_spent
