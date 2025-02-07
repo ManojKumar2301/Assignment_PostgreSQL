@@ -46,8 +46,9 @@ GROUP BY customers.name
 ORDER BY average_order_value DESC;
 
 --Create an index to optimize querying orders by customer_id.
-CREATE INDEX customer_orders
-ON orders (customer_id);
+CREATE INDEX customer_orders ON orders (customer_id);
+
+SELECT * FROM orders WHERE customer_id = 2;
 
 --Find products ordered more than 2 times in total.
 SELECT product_name, SUM(order_items.quantity) AS total_ordered
