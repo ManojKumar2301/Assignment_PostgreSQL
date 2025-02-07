@@ -9,6 +9,7 @@ SELECT * FROM orders WHERE order_date >= '2023-01-01' AND order_date < '2023-02-
 SELECT SUM(order_items.quantity * products.price) as total_revenue FROM order_items INNER JOIN products ON order_items.product_id=products.product_id;
 
 --Joins and Relationships
+
 --Show all orders with customer names and order dates.
 SELECT customers.name, orders.order_date FROM customers INNER JOIN orders on customers.customer_id = orders.customer_id;
 
@@ -28,15 +29,20 @@ GROUP BY customers.name
 ORDER BY total_spent DESC
 LIMIT 1;
 
---Data Manipulation
 --Update the price of "Laptop" to 899.99.
 UPDATE products SET price=899.99 WHERE product_name='Laptop';
+
+SELECT * FROM products ORDER BY product_id;
 
 --Delete all orders placed before 2023-01-02.
 DELETE FROM orders WHERE order_date < '2023-01-02';
 
+SELECT * FROM orders;
+
 --Add a new product "Headphones" priced at 149.99.
 INSERT INTO products (product_name, price) VALUES ('Headphones', 149.99);
+
+SELECT * FROM products;
 
 --Advanced Challenges
 --Calculate the average order value per customer.
@@ -49,7 +55,8 @@ GROUP BY customers.name
 ORDER BY average_order_value DESC;
 
 --Create an index to optimize querying orders by customer_id.
-CREATE INDEX customer_orders ON orders (customer_id);
+CREATE INDEX customer_orders
+ON orders (customer_id);
 
 SELECT * FROM orders WHERE customer_id = 2;
 
@@ -59,3 +66,5 @@ FROM order_items
 INNER JOIN products ON order_items.product_id = products.product_id
 GROUP BY product_name
 HAVING SUM(order_items.quantity) > 2;
+
+select * from orders;
